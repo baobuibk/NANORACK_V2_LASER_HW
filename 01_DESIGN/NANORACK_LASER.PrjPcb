@@ -84,7 +84,7 @@ GenerateClassCluster=0
 DocumentUniqueId=XUIKVXNA
 
 [Document3]
-DocumentPath=LDO.SchDoc
+DocumentPath=POWER SWITCH AND LDO.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -169,41 +169,7 @@ GenerateClassCluster=0
 DocumentUniqueId=JUDHNQEP
 
 [Document8]
-DocumentPath=..\LIBRARY\LIBRARY_MAIN\Library_HUNG.PcbLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=RSQJBCXE
-
-[Document9]
-DocumentPath=..\LIBRARY\LIBRARY_MAIN\Library_HUNG.SchLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=NKLQRFPS
-
-[Document10]
-DocumentPath=..\LIBRARY\LIBRARY_MAIN\Capacitors.PcbLib
+DocumentPath=NANORACK_LASER.OutJob
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -219,8 +185,42 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
+[Document9]
+DocumentPath=..\..\..\LIBRARY\LIBRARY_MAIN\Capacitors.PcbLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=BSKGUNQJ
+
+[Document10]
+DocumentPath=..\..\..\LIBRARY\LIBRARY_MAIN\Capacitors.SchLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=VAWLRLIX
+
 [Document11]
-DocumentPath=..\LIBRARY\LIBRARY_MAIN\Capacitors.SchLib
+DocumentPath=..\..\..\LIBRARY\LIBRARY_MAIN\Jump_2.54.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -237,7 +237,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document12]
-DocumentPath=..\LIBRARY\LIBRARY_MAIN\Jump_2.54.PcbLib
+DocumentPath=..\..\..\LIBRARY\LIBRARY_MAIN\Library_HUNG.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -251,10 +251,10 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=RSQJBCXE
 
 [Document13]
-DocumentPath=NANORACK_LASER.OutJob
+DocumentPath=..\..\..\LIBRARY\LIBRARY_MAIN\Library_HUNG.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -268,7 +268,7 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=NKLQRFPS
 
 [Configuration1]
 Name=Sources
