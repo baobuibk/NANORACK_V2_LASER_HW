@@ -1,0 +1,358 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD21\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">1/17/2025</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">10:39:01 AM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///D:\WorkSpace\Altium\NANORACK\LASERDIODE V1.2.0\01_DESIGN\LASERDIODE_V1.1.0.PcbDoc" class="file"><acronym title="D:\WorkSpace\Altium\NANORACK\LASERDIODE V1.2.0\01_DESIGN\LASERDIODE_V1.1.0.PcbDoc">D:\WorkSpace\Altium\NANORACK\LASERDIODE V1.2.0\01_DESIGN\LASERDIODE_V1.1.0.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">10</td></tr>
+</table>
+</td>
+</table><a name="IDPUOZ5SWLDPPFDYVZHUUW4Q4X4VRFEPWPI4SNLFAWLPXRRBGD5WC"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDSMVDRLD3QIF5FCBKDCSSI02NJPN3ZEV4X2VEZACZ3RTKQFJOCA2G">Clearance Constraint (Gap=0.15mm) (NOT InNet('SHIELD') and NOT OnLayer('Keep-Out Layer')),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDM2UB5NWYVZX5FJJHP5QTRKR4RFKENRH0DUCM4NLTDZYDAPJUVPOJ">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDM4C42LJZAGLNEWR2FD5YIYDOBGCZWGM5P214NTNSUSGUY0UL0NJO">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">10</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDPS12DOXLIMF1C4X3G5U3I3PDAMIZINLCSAGKEYEGAYHZPQMAQSFF">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDBQ1FVNXK45S1HGPGPREURGAFXDUJFK41IEZM5EFF4QBGYURYBXGO">Width Constraint (Min=0.254mm) (Max=3mm) (Preferred=0.6mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDNGTPKHIUNHYRDUUDCKEAA3CYMC1BQTTJOFOH1XPYMV0BX5MVJX2H">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDZ4OMZX3P5WNAFE4ND5GGWYCSSO14TGBSCJQ0QUIVZXWESAN4VN5P">Hole Size Constraint (Min=0.025mm) (Max=4mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDPOWAKZMVAVJ0DLDPSR3I0RGTTNQXVTHSFZ5DBRH41GWVZOLPTQJK">Hole To Hole Clearance (Gap=0mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID1CUKJVKNT25AEHE4VVXRRUC05PGKYNAA3HNS2KNSU4MEQZWAYUL">Minimum Solder Mask Sliver (Gap=0mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID4OJHALE3R4PAJPZBCQM5SNFXRCOR3EGYF2XJ3PO1XRTTHEM0SBND">Silk To Solder Mask (Clearance=0mm) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDIVS5VO3JN3YDJ33FGCHQWRN1MPBO4ZDR31JKQ53MZQ2I5RUIOQL">Silk to Silk (Clearance=0mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJJVYF3FM2FSPFKKHV4Y02KGUJCYODFCWT0CGRKINQMVGUZO0VQ5L">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDIPKS1UF4UNWIPLQEAC5GGNUE5F5CTNOLGNMFJ2Q3SNBW2BNDNQD">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">10</td>
+</tr>
+</table><br><a name="IDM4C42LJZAGLNEWR2FD5YIYDOBGCZWGM5P214NTNSUSGUY0UL0NJO"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\WorkSpace\Altium\NANORACK\LASERDIODE V1.2.0\01_DESIGN\LASERDIODE_V1.1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3450mil|Location2.X=3500mil|Location1.Y=1555mil|Location2.Y=1570mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\WorkSpace\Altium\NANORACK\LASERDIODE V1.2.0\01_DESIGN\LASERDIODE_V1.1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3450mil|Location2.X=3500mil|Location1.Y=1555mil|Location2.Y=1570mil|Absolute=True">Un-Routed Net Constraint: Area Fill (37.973mm,1.905mm) (39.243mm,2.286mm) on Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\WorkSpace\Altium\NANORACK\LASERDIODE V1.2.0\01_DESIGN\LASERDIODE_V1.1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3450mil|Location2.X=3500mil|Location1.Y=2595mil|Location2.Y=2610mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\WorkSpace\Altium\NANORACK\LASERDIODE V1.2.0\01_DESIGN\LASERDIODE_V1.1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3450mil|Location2.X=3500mil|Location1.Y=2595mil|Location2.Y=2610mil|Absolute=True">Un-Routed Net Constraint: Area Fill (37.973mm,28.321mm) (39.243mm,28.702mm) on Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\WorkSpace\Altium\NANORACK\LASERDIODE V1.2.0\01_DESIGN\LASERDIODE_V1.1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3450mil|Location2.X=3500mil|Location1.Y=2650mil|Location2.Y=2665mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\WorkSpace\Altium\NANORACK\LASERDIODE V1.2.0\01_DESIGN\LASERDIODE_V1.1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3450mil|Location2.X=3500mil|Location1.Y=2650mil|Location2.Y=2665mil|Absolute=True">Un-Routed Net Constraint: Area Fill (37.973mm,29.718mm) (39.243mm,30.099mm) on Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\WorkSpace\Altium\NANORACK\LASERDIODE V1.2.0\01_DESIGN\LASERDIODE_V1.1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3450mil|Location2.X=3500mil|Location1.Y=1610mil|Location2.Y=1625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\WorkSpace\Altium\NANORACK\LASERDIODE V1.2.0\01_DESIGN\LASERDIODE_V1.1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3450mil|Location2.X=3500mil|Location1.Y=1610mil|Location2.Y=1625mil|Absolute=True">Un-Routed Net Constraint: Area Fill (37.973mm,3.302mm) (39.243mm,3.683mm) on Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\WorkSpace\Altium\NANORACK\LASERDIODE V1.2.0\01_DESIGN\LASERDIODE_V1.1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3580mil|Location2.X=3630mil|Location1.Y=1555mil|Location2.Y=1570mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\WorkSpace\Altium\NANORACK\LASERDIODE V1.2.0\01_DESIGN\LASERDIODE_V1.1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3580mil|Location2.X=3630mil|Location1.Y=1555mil|Location2.Y=1570mil|Absolute=True">Un-Routed Net Constraint: Area Fill (41.275mm,1.905mm) (42.545mm,2.286mm) on Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\WorkSpace\Altium\NANORACK\LASERDIODE V1.2.0\01_DESIGN\LASERDIODE_V1.1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3580mil|Location2.X=3630mil|Location1.Y=2595mil|Location2.Y=2610mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\WorkSpace\Altium\NANORACK\LASERDIODE V1.2.0\01_DESIGN\LASERDIODE_V1.1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3580mil|Location2.X=3630mil|Location1.Y=2595mil|Location2.Y=2610mil|Absolute=True">Un-Routed Net Constraint: Area Fill (41.275mm,28.321mm) (42.545mm,28.702mm) on Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\WorkSpace\Altium\NANORACK\LASERDIODE V1.2.0\01_DESIGN\LASERDIODE_V1.1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3580mil|Location2.X=3630mil|Location1.Y=2650mil|Location2.Y=2665mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\WorkSpace\Altium\NANORACK\LASERDIODE V1.2.0\01_DESIGN\LASERDIODE_V1.1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3580mil|Location2.X=3630mil|Location1.Y=2650mil|Location2.Y=2665mil|Absolute=True">Un-Routed Net Constraint: Area Fill (41.275mm,29.718mm) (42.545mm,30.099mm) on Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\WorkSpace\Altium\NANORACK\LASERDIODE V1.2.0\01_DESIGN\LASERDIODE_V1.1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3580mil|Location2.X=3630mil|Location1.Y=1610mil|Location2.Y=1625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\WorkSpace\Altium\NANORACK\LASERDIODE V1.2.0\01_DESIGN\LASERDIODE_V1.1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3580mil|Location2.X=3630mil|Location1.Y=1610mil|Location2.Y=1625mil|Absolute=True">Un-Routed Net Constraint: Area Fill (41.275mm,3.302mm) (42.545mm,3.683mm) on Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\WorkSpace\Altium\NANORACK\LASERDIODE V1.2.0\01_DESIGN\LASERDIODE_V1.1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5048.173mil|Location2.X=5209.707mil|Location1.Y=3806.894mil|Location2.Y=3893.894mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\WorkSpace\Altium\NANORACK\LASERDIODE V1.2.0\01_DESIGN\LASERDIODE_V1.1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5048.173mil|Location2.X=5209.707mil|Location1.Y=3806.894mil|Location2.Y=3893.894mil|Absolute=True">Un-Routed Net Constraint: Net SHIELD Between Pad J1-9(80.116mm,60.208mm) on Bottom Layer And Pad Free-1(82.368mm,60.229mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\WorkSpace\Altium\NANORACK\LASERDIODE V1.2.0\01_DESIGN\LASERDIODE_V1.1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5048.173mil|Location2.X=5209.709mil|Location1.Y=4352.169mil|Location2.Y=4439.169mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\WorkSpace\Altium\NANORACK\LASERDIODE V1.2.0\01_DESIGN\LASERDIODE_V1.1.0.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5048.173mil|Location2.X=5209.709mil|Location1.Y=4352.169mil|Location2.Y=4439.169mil|Absolute=True">Un-Routed Net Constraint: Net SHIELD Between Pad J1-10(80.116mm,74.058mm) on Bottom Layer And Pad Free-1(82.368mm,74.229mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
