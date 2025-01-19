@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------------------------------------
-NCDrill File Report For: LASERDIODE_V1.1.0.PcbDoc   1/19/2025  6:56:42 PM
+NCDrill File Report For: LASERDIODE_V1.1.0.PcbDoc   1/19/2025  10:07:11 PM
 ----------------------------------------------------------------------------------------------------------------------------------
 
 Layer Pair : Top Layer to Bottom Layer
@@ -7,11 +7,11 @@ ASCII RoundHoles File : LASERDIODE_V1.1.0.TXT
 
 Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
 ----------------------------------------------------------------------------------------------------------------------------------
-T1      0.2mm (8mil)                                              Round             923       PTH        1779.69mm (70.07inch)
+T1      0.2mm (8mil)                                              Round             923       PTH        1757.91mm (69.21inch)
 T2      0.6mm (24mil)                                             Round             208       PTH        971.72mm (38.26inch)
 T3      1.1mm (43mil)                                             Round             14        PTH        33.02mm (1.30inch)
 T4      3.3mm (130mil)                                            Round             8         PTH        299.00mm (11.77inch)
 ----------------------------------------------------------------------------------------------------------------------------------
 Totals                                                                              1153
 
-Total Processing Time (hh:mm:ss) : 00:00:00
+Total Processing Time (hh:mm:ss) : 00:00:01
